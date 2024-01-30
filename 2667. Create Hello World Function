@@ -1,0 +1,31 @@
+Write a function createHelloWorld. It should return a new function that always returns "Hello World".
+Example 1:
+
+Input: args = []
+Output: "Hello World"
+Explanation:
+const f = createHelloWorld();
+f(); // "Hello World"
+The function returned by createHelloWorld should always return "Hello World".
+
+Example 2:
+Input: args = [{},null,42]
+Output: "Hello World"
+Explanation:
+const f = createHelloWorld();
+f({}, null, 42); // "Hello World"
+Any arguments could be passed to the function but it should still always return "Hello World"
+
+Constraints:
+0 <= args.length <= 10
+
+
+Code:
+
+var createHelloWorld = function() {   // a variable named createHelloWorld is declared and assigned a function expression.
+    return function(...args) {       //inside the createHelloWorld function, another function is defined. This inner function takes any number of arguments (using the rest parameter syntax ...args), but it doesn't actually use these arguments.
+        return "Hello World";        //The inner function simply returns the string "Hello World". This means that whenever you call the createHelloWorld function, it will return this inner function. 
+    }
+};
+
+
